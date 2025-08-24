@@ -1,16 +1,970 @@
 ---
-
+import "@fontsource-variable/montserrat";
+import ActionButton from "../components/actionButton.astro";
+import PlanCard from "../components/planCard.astro";
+import PrimaryButton from "../components/primaryButton.astro";
+import ProcessCard from "../components/processCard.astro";
+import ReasonCard from "../components/reasonCard.astro";
+import ServiceCard from "../components/serviceCard.astro";
+import TestimonialCard from "../components/testimonialCard.astro";
+import TrustStat from "../components/trustStat.astro";
+import arrow from "../images/Arrow.png";
+import mail from "../images/Mail.png";
+import phone from "../images/Phone.png";
+import menu from "../images/Menu.png";
+import brandLogo from "../images/Logo.png";
+import brandName from "../images/BrandName.png";
+import stripStar from "../images/StripStar.png";
+import github from "../images/Github.png";
+import linkedin from "../images/LinkedIn.webp";
+import upwork from "../images/Upwork.webp";
+import fiverr from "../images/Fiverr.png";
+import expIcon from "../images/ExpIcon.png";
+import proIcon from "../images/ProIcon.png";
+import affIcon from "../images/AffIcon.png";
+import connectIcon from "../images/ConnectIcon.png";
+import commitIcon from "../images/CommitIcon.png";
+import createIcon from "../images/CreateIcon.png";
+import closeIcon from "../images/CloseIcon.png";
+import pmBG from "../images/PM_BG.png";
+import fwBG from "../images/FW_BG.png";
+import etBG from "../images/ET_BG.png";
+import gjBG from "../images/GJ_BG.png";
+import cmBG from "../images/CM_BG.png";
+import person1 from "../images/person1.jpeg";
+import person2 from "../images/person2.jpeg";
+import person3 from "../images/person3.jpeg";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>NaFu Apps</title>
+  </head>
+  <body>
+    <div class="main-content" id="main">
+      <div class="main-header">
+        <div
+          class="header-left"
+          onclick="document.getElementById('main').scrollIntoView()"
+        >
+          <img src={brandLogo.src} alt="NaFu Apps Logo" class="brandLogo" />
+          <img
+            src={brandName.src}
+            alt="NaFu Apps Brand Name"
+            class="brandName"
+          />
+        </div>
+        <div class="header-right hide-menu" id="menu-list">
+          <span
+            class="nav-item"
+            onclick="document.getElementById('about').scrollIntoView()"
+            >ABOUT US</span
+          >
+          <span
+            class="nav-item"
+            onclick="document.getElementById('services').scrollIntoView()"
+            >SERVICES</span
+          >
+          <span
+            class="nav-item"
+            onclick="document.getElementById('pricing').scrollIntoView()"
+            >PRICING</span
+          >
+          <span
+            class="nav-item"
+            onclick="document.getElementById('process').scrollIntoView()"
+            >PROCESS</span
+          >
+          <span
+            class="nav-item"
+            onclick="document.getElementById('works').scrollIntoView()"
+            >WORKS</span
+          >
+        </div>
+        <div class="header-menu" id="menu-button">
+          <img src={menu.src} alt="Navigation Menu" class="nav-menu" />
+        </div>
+      </div>
+      <div class="main-sections">
+        <div class="section" id="landing">
+          <div class="landing-title">
+            <span class="hero-text">Want to take your business online..</span>
+            <span class="hero-text">but don't know where to start?</span>
+            <span class="hero-text" id="text-pop">We will help you.</span>
+          </div>
+          <div class="landing-title">
+            <span class="hero-subtext"
+              >NaFu Apps is a freelance web agency which launches your business
+              onto its digital journey</span
+            >
+            <span class="hero-subtext" id="subtext-pop">blazingly fast...</span>
+          </div>
+          <div class="landing-cta">
+            <PrimaryButton
+              text="Connect Now"
+              linkUrl="document.getElementById('contact').scrollIntoView()"
+            />
+            <ActionButton
+              text="Discover More"
+              iconUrl={arrow.src}
+              linkUrl="#contact"
+            />
+          </div>
+          <div class="landing-strip">
+            <img class="strip-star" src={stripStar.src} alt="Star Icon" />
+            <span class="strip-text">MOBILE APP</span>
+            <img class="strip-star" src={stripStar.src} alt="Star Icon" />
+            <span class="strip-text">WEBSITE</span>
+            <img class="strip-star" src={stripStar.src} alt="Star Icon" />
+            <span class="strip-text">UI/UX DESIGN</span>
+            <img class="strip-star" src={stripStar.src} alt="Star Icon" />
+            <span class="strip-text hide-strip">CONSULTING</span>
+            <img
+              class="strip-star hide-strip"
+              src={stripStar.src}
+              alt="Star Icon"
+            />
+          </div>
+        </div>
+        <div class="section" id="about">
+          <span class="section-header">ABOUT US</span>
+          <span class="section-title">
+            We enable Indian entrepreneurs to achieve their lifelong dreams by
+            providing <span id="about-pop">high-quality IT solutions.</span>
+          </span>
+          <div class="about-content">
+            <div class="about-reasons">
+              <ReasonCard
+                header="EXPERIENCED"
+                subtitle="We are a dedicated team of developers, designers & product managers from Tier-1 colleges who have worked at some of the biggest startups in India"
+                reasonUrl={expIcon.src}
+              />
+              <ReasonCard
+                header="AFFORDABLE"
+                subtitle="We know it is difficult to start a business and the initial phases are the most crucial part of the journey. That’s why we provide the most affordable services in the market"
+                reasonUrl={affIcon.src}
+              />
+              <ReasonCard
+                header="PROFESSIONAL"
+                subtitle="We believe mutual trust comes from transparency. And that’s why our core values are based on honesty, empathy, punctuality and professionalism."
+                reasonUrl={proIcon.src}
+              />
+            </div>
+            <div class="about-testimonials">
+              <TestimonialCard
+                header="Very approachable, simple and value for money branding service.. Loved it!"
+                subtitle1="VRITI SHARMA, DELHI"
+                subtitle2="Beauty Parlor Manager"
+                avatarUrl={person1.src}
+              />
+              <TestimonialCard
+                header="I asked Nafu apps to make a website for my shop.. now more customers are visiting."
+                subtitle1="JAGRIT KUMAR, AGRA"
+                subtitle2="Supermarket Owner"
+                avatarUrl={person2.src}
+              />
+              <TestimonialCard
+                header="They built an app for my startup in 2 months. Works perfect, no bugs and awesome customer support."
+                subtitle1="AASHISH P, BENGALURU"
+                subtitle2="Healthcare Startup Founder"
+                avatarUrl={person3.src}
+              />
+            </div>
+          </div>
+          <div class="about-stats">
+            <TrustStat header="13+" subtitle="Yrs of Experience" />
+            <TrustStat header="25+" subtitle="Happy Clients" />
+            <TrustStat header="4.8" subtitle="Star Rating" />
+            <TrustStat header="10+" subtitle="Cities Served" />
+          </div>
+        </div>
+        <div class="section" id="services">
+          <span class="section-header">OUR SERVICES</span>
+          <span class="section-title">
+            We provide a <span id="services-pop"
+              >wide range of digital services</span
+            > to help your business setup its online presence.
+          </span>
+          <div class="services-content">
+            <ServiceCard
+              header="WEBSITE DEVELOPMENT"
+              subtitle="Create amazing professional websites to quickly showcase your business online"
+              tags={["Portfolio", "Online Shop", "Blog"]}
+              numberStars={4}
+            />
+            <ServiceCard
+              header="MOBILE & WEB APP DEVELOPMENT"
+              subtitle="Build scalable mobile and web applications to interact with your customers"
+              tags={["Startup MVP Apps", "B2B SaaS", "E-Commerce"]}
+              numberStars={5}
+            />
+            <ServiceCard
+              header="UI/UX DESIGN & BRANDING"
+              subtitle="Enhance user experience with visually appealing digital touchpoints for your brand"
+              tags={["Graphic Design", "Design System", "Branding", "Logo"]}
+              numberStars={4}
+            />
+            <ServiceCard
+              header="PRODUCT CONSULTING"
+              subtitle="Accelerate execution of your product roadmap to achieve user-centric results"
+              tags={["Product Management", "Strategy", "Consulting"]}
+              numberStars={5}
+            />
+          </div>
+        </div>
+        <div class="section" id="pricing">
+          <span class="section-header">OUR PRICING</span>
+          <span class="section-title"
+            >We offer <span id="pricing-pop">affordable packages</span> to match
+            all your business needs... big or small.</span
+          >
+          <div class="pricing-plans">
+            <PlanCard
+              header="BASIC"
+              slashedPrice="29,999"
+              price="9,999/-"
+              timeline="For a small 1 - 2 week project"
+              bestTags={[
+                "Simple website (up to 3 pages)",
+                "Mini branding (logo, poster, etc.)",
+                "Part-time product consulting",
+              ]}
+              includeList={[
+                "1 month post handover support",
+                "Responsive design",
+              ]}
+              popularTag={false}
+            />
+            <PlanCard
+              header="STANDARD"
+              slashedPrice="149,999"
+              price="49,999/-"
+              timeline="For a medium 1 - 2 month project"
+              bestTags={[
+                "MVP mobile/web app for a startup",
+                "End-to-end branding",
+                "Managing feature development",
+              ]}
+              includeList={[
+                "3 month post handover support",
+                "1 round of requirement change",
+              ]}
+              popularTag={true}
+            />
+            <PlanCard
+              header="PREMIUM"
+              slashedPrice="4,99,999"
+              price="1,49,999/-"
+              timeline="For a large 4 - 6 month project"
+              bestTags={[
+                "Full blown mobile/web app for an org",
+                "B2B SaaS application",
+                "Managing entire product development",
+              ]}
+              includeList={[
+                "6 month post handover support",
+                "2 rounds of requirement change",
+                "24x7 availability for client sync-up",
+              ]}
+              popularTag={false}
+            />
+          </div>
+          <ol class="pricing-footer">
+            <li class="pricing-footer-text">
+              Our prices are fixed and non-negotiable. We do, however, provide
+              10% additional discount for social service sectors like education,
+              healthcare, NGO, etc.
+            </li>
+            <li class="pricing-footer-text">
+              Post launch support does not include extra feature development or
+              requirement changes. It includes only review, bug fixes and
+              testing of existing project deliverables.
+            </li>
+            <li class="pricing-footer-text">
+              We also provide additional support for project maintenance (after
+              a plan has completed) at a nominal price of 3,000/- per month or
+              30,000/- per year billed separately.
+            </li>
+            <li class="pricing-footer-text">
+              All payments are to be made via UPI or Net banking. We don't
+              accept cash or cards.
+            </li>
+            <li class="pricing-footer-text">
+              Not sure which plan is right for you? Connect with us and we will
+              help you choose the best one.
+            </li>
+          </ol>
+        </div>
+        <div class="section" id="process">
+          <span class="section-header">OUR PROCESS</span>
+          <span class="section-title"
+            >We follow a <span id="process-pop">simple system</span> that works great
+            for both the parties involved - you and us.</span
+          >
+          <div class="process-content">
+            <ProcessCard
+              title="Connect"
+              iconUrl={connectIcon.src}
+              subtitle="Initial discovery call to gather requirements and discuss goals, budget and timelines"
+              outcomeText=" Draft proposal & rough estimate"
+              paymentTag="Free of charge"
+              step={1}
+            />
+            <ProcessCard
+              title="Commit"
+              iconUrl={commitIcon.src}
+              subtitle="Detailed discussion to freeze deliverables and signing of contract to start the work"
+              outcomeText="Legal agreement & project kick-off"
+              paymentTag="10% advance payment"
+              step={2}
+            />
+            <ProcessCard
+              title="Create"
+              iconUrl={createIcon.src}
+              subtitle="Build consistently, iterate quickly and frequently communicate with the client to review progress"
+              outcomeText="Regular project status updates and feedback"
+              paymentTag="40% milestone payment"
+              step={3}
+            />
+            <ProcessCard
+              title="Close"
+              iconUrl={closeIcon.src}
+              subtitle="Deliver completed project files with a live demo and provide post launch support"
+              outcomeText="Project launch & final handover"
+              paymentTag="50% final payment"
+              step={4}
+            />
+          </div>
+        </div>
+        <div class="section" id="works">
+          <span class="section-header">OUR WORKS</span>
+          <span class="section-title"
+            >We are not that big yet but we have partnered with many amazing
+            clients to <span id="works-pop">create some awesome stuff.</span>
+          </span>
+          <div class="works-content">
+            <img class="work-card" src={pmBG.src} alt="PM Work" />
+            <img class="work-card" src={etBG.src} alt="ET Work" />
+            <img class="work-card" src={fwBG.src} alt="FW Work" />
+            <img class="work-card" src={gjBG.src} alt="GJ Work" />
+            <img class="work-card" src={cmBG.src} alt="CM Work" />
+          </div>
+        </div>
+        <div class="section" id="contact">
+          <span class="section-header">CONTACT US</span>
+          <span class="section-title"
+            >Interested in building something great with us?
+          </span>
+          <span class="section-title" id="contact-pop">Let's connect!</span>
+          <div class="contact-cta">
+            <ActionButton
+              text="nafuapps@gmail.com"
+              iconUrl={mail.src}
+              linkUrl="mailto:nafuapps@gmail.com"
+            />
+            <ActionButton
+              text="91-9840774089"
+              iconUrl={phone.src}
+              linkUrl="tel:91-9840774089"
+            />
+          </div>
+          <div class="contact-social">
+            <a
+              class="social-cta"
+              href="https://github.com/nafuapps/"
+              target="_blank"
+            >
+              <img src={github.src} alt="Social Icon 1" class="social-icon" />
+            </a>
+            <a
+              class="social-cta"
+              href="https://www.linkedin.com/company/nafu-apps"
+              target="_blank"
+            >
+              <img src={linkedin.src} alt="Social Icon 2" class="social-icon" />
+            </a>
+            <a class="social-cta" href="" target="_blank">
+              <img src={upwork.src} alt="Social Icon 3" class="social-icon" />
+            </a>
+            <a class="social-cta" href="" target="_blank">
+              <img src={fiverr.src} alt="Social Icon 4" class="social-icon" />
+            </a>
+          </div>
+          <div class="contact-footer"></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
+
+<script>
+  const menuList = document.getElementById("menu-list");
+  const menuButton = document.getElementById("menu-button");
+
+  //Menu Button hide and show toggle
+  menuButton?.addEventListener("click", () => {
+    menuList?.classList.toggle("hide-menu");
+  });
+  //Clicking menu item hides the menu
+  menuList?.addEventListener("click", () => {
+    menuList.classList.add("hide-menu");
+  });
+  //clicking outside the menu hides the menu
+  document.addEventListener("click", (event) => {
+    if (
+      !menuButton?.contains(event.target as Node) &&
+      !menuList?.contains(event.target as Node)
+    ) {
+      menuList?.classList.add("hide-menu");
+    }
+  });
+</script>
+
+<style>
+  :root {
+    /* Colors */
+    --white0: #ffffff;
+    --white1: #eeeeee;
+    --white2: #dddddd;
+    --black0: #000000;
+    --black1: #090909;
+    --black2: #1f1e1e;
+    --grey0: #999999;
+    --grey1: #666666;
+    --primary: #ba5230;
+    --primary-dark: #8c2e0f;
+    --secondary: #f1b959;
+    --secondary-dark: #bb8220;
+
+    /* Font sizes - desktop & mobile */
+    --d1: 40px;
+    --d2: 32px;
+    --d3: 24px;
+    --d4: 18px;
+    --d5: 14px;
+    --m1: 32px;
+    --m2: 26px;
+    --m3: 20px;
+    --m4: 16px;
+    --m5: 14px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Montserrat Variable";
+  }
+  .main-content {
+    width: 100%;
+    background-color: var(--white1);
+  }
+  .main-header {
+    background-color: var(--white0);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    border-radius: 16px;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 32px;
+    margin-left: 48px;
+    margin-right: 48px;
+    z-index: 10;
+  }
+  .header-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 24px;
+    cursor: pointer;
+  }
+  .brandLogo {
+    height: 32px;
+    width: 32px;
+  }
+  .brandName {
+    height: 20px;
+    width: auto;
+  }
+  .header-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 24px;
+  }
+  .nav-item {
+    font-size: var(--d4);
+    line-height: 24px;
+    font-weight: 600;
+    color: var(--primary);
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  .nav-item:hover {
+    color: var(--primary-dark);
+  }
+  .header-menu {
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-menu {
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+  }
+  .main-sections {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 80px;
+    margin-top: 80px;
+  }
+  #about,
+  #services,
+  #pricing,
+  #process,
+  #works,
+  #contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 64px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    padding: 128px 48px 64px 48px;
+    margin: 0px 48px;
+  }
+  #landing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 64px;
+    box-sizing: border-box;
+    padding: 64px 0px;
+    width: 100%;
+  }
+  .landing-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 0px 48px;
+  }
+  .hero-text {
+    font-size: var(--d1);
+    line-height: 48px;
+    font-weight: 600;
+    color: var(--black0);
+    text-align: center;
+  }
+  #text-pop,
+  #about-pop,
+  #services-pop,
+  #pricing-pop,
+  #process-pop,
+  #works-pop {
+    color: var(--secondary-dark);
+  }
+  .hero-subtext {
+    font-size: var(--d3);
+    line-height: 32px;
+    font-weight: 400;
+    color: var(--black0);
+    text-align: center;
+  }
+  #contact-pop,
+  #subtext-pop {
+    color: var(--primary);
+    font-weight: 600;
+  }
+  .landing-cta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+  .landing-strip {
+    padding: 16px 32px;
+    box-sizing: border-box;
+    gap: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white0);
+    width: 100%;
+  }
+  .strip-star {
+    height: 32px;
+    width: 32px;
+  }
+  .strip-text {
+    font-size: var(--d4);
+    line-height: 32px;
+    font-weight: 600;
+    text-align: center;
+    color: var(--primary);
+  }
+  #about,
+  #services,
+  #pricing,
+  #process,
+  #works {
+    background-color: var(--white0);
+  }
+  .section-header {
+    font-size: var(--d4);
+    line-height: 32px;
+    font-weight: 600;
+    color: var(--primary);
+    text-align: center;
+  }
+  .section-title {
+    font-size: var(--d2);
+    line-height: 48px;
+    font-weight: 600;
+    color: var(--black0);
+    text-align: center;
+  }
+  .about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+  .about-reasons {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 32px;
+    flex: 1;
+  }
+  .about-testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 32px;
+    padding: 0px 16px;
+    flex: 1;
+  }
+  .about-stats {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
+  .services-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .pricing-plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+  }
+  .pricing-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 8px;
+    padding: 0px 48px;
+  }
+  .pricing-footer-text {
+    font-size: var(--d5);
+    line-height: 21px;
+    color: var(--grey1);
+  }
+  .process-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    width: 100%;
+  }
+  .works-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 100%;
+  }
+  .works-content :last-child {
+    display: none;
+  }
+  .work-card {
+    border: 4px solid var(--black0);
+    border-radius: 16px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .contact-cta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+  .contact-social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+  .social-cta {
+    border-radius: 16px;
+    height: 64px;
+    width: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white0);
+    cursor: pointer;
+  }
+  .social-icon {
+    height: 48px;
+    width: 48px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    .main-header {
+      margin: auto;
+      max-width: 1440px;
+    }
+    .main-sections {
+      margin: 120px auto 0px auto;
+    }
+    .section-header,
+    .section-title,
+    .about-content,
+    .about-stats,
+    .services-content,
+    .pricing-plans,
+    .pricing-footer,
+    .process-content,
+    .works-content,
+    .contact-cta,
+    .contact-social,
+    .contact-footer {
+      max-width: 1440px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .main-header {
+      top: 24px;
+      margin-left: 24px;
+      margin-right: 24px;
+      padding: 8px 16px;
+    }
+    .header-left {
+      gap: 8px;
+    }
+    .brandLogo {
+      height: 24px;
+      width: 24px;
+    }
+    .brandName {
+      height: 16px;
+      width: auto;
+    }
+    .header-right {
+      flex-direction: column;
+      position: absolute;
+      right: 0px;
+      top: 64px;
+      gap: 32px;
+      z-index: 10;
+      padding: 24px;
+      border-radius: 16px;
+      justify-content: start;
+      background-color: var(--white0);
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+    }
+    .hide-menu {
+      display: none;
+    }
+    .header-menu {
+      display: flex;
+    }
+    .nav-item {
+      font-size: var(--m4);
+      line-height: 21px;
+    }
+    .nav-menu {
+      height: 32px;
+      width: 32px;
+    }
+    .main-sections {
+      gap: 64px;
+    }
+    #about,
+    #services,
+    #pricing,
+    #process,
+    #works,
+    #contact {
+      padding: 80px 16px;
+      margin: 0px 24px;
+    }
+    #landing {
+      padding: 32px 0px;
+    }
+    .landing-title {
+      padding: 0px 24px;
+    }
+    .hero-text {
+      font-size: var(--m1);
+      line-height: 40px;
+    }
+    .hero-subtext {
+      font-size: var(--m3);
+      line-height: 30px;
+    }
+    .landing-cta {
+      gap: 16px;
+    }
+    .landing-strip {
+      padding: 12px 8px;
+      gap: 8px;
+    }
+    .strip-star {
+      height: 16px;
+      width: 16px;
+    }
+    .strip-text {
+      font-size: var(--m5);
+      line-height: 18px;
+      font-weight: 600;
+    }
+    .hide-strip {
+      display: none;
+    }
+    .section-header {
+      font-size: var(--m4);
+      line-height: 24px;
+    }
+    .section-title {
+      font-size: var(--m2);
+      line-height: 32px;
+    }
+    .about-content {
+      padding: 0px;
+      gap: 48px;
+      flex-direction: column;
+    }
+    .about-testimonials {
+      padding: 0px;
+      gap: 24px;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .services-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+    }
+    .pricing-plans {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .pricing-footer {
+      padding: 0px 24px;
+    }
+    .pricing-footer-text {
+      font-size: var(--m5);
+      line-height: 18px;
+    }
+    .process-content {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 1fr);
+    }
+    .works-content {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 1fr);
+    }
+    .works-content :last-child {
+      display: block;
+    }
+    .contact-cta {
+      flex-direction: column;
+      gap: 16px;
+    }
+    .social-cta {
+      height: 48px;
+      width: 48px;
+    }
+    .social-icon {
+      height: 32px;
+      width: 32px;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .main-content {
+      background-color: var(--black1);
+    }
+    .main-header {
+      background-color: var(--black2);
+      box-shadow: 1px 2px 2px rgba(111, 111, 111, 0.3);
+    }
+    .header-right {
+      background-color: var(--black2);
+    }
+    .landing-strip {
+      background-color: var(--black2);
+    }
+    .hero-text,
+    .hero-subtext,
+    .section-title {
+      color: var(--white0);
+    }
+    .pricing-footer-text {
+      color: var(--grey0);
+    }
+    #about,
+    #services,
+    #pricing,
+    #process,
+    #works {
+      background-color: var(--black0);
+    }
+    #text-pop,
+    #about-pop,
+    #services-pop,
+    #pricing-pop,
+    #process-pop,
+    #works-pop {
+      color: var(--secondary);
+    }
+    .strip-text {
+      color: var(--primary);
+    }
+  }
+</style>

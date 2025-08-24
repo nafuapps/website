@@ -1,0 +1,226 @@
+---
+import SecondaryButton from './secondaryButton.astro';
+
+interface Props {
+  header: string;
+  slashedPrice: string;
+  price: string;
+  timeline: string;
+  bestTags: string[];
+  includeList: string[];
+  popularTag: boolean; // Optional, can be used for avatar image
+}
+
+const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag } = Astro.props;
+---
+
+<div class="plan-card">
+  <div class="plan-topline">
+    <span class="plan-header">{header}</span>
+    {popularTag?<span class="plan-popular">MOST POPULAR</span>:<></>}
+  </div>
+  <div class="plan-price">
+    <span class="plan-slashed-price">{slashedPrice}</span>
+    <span class="plan-current-price">{price}</span>
+    <span class="plan-gst">(incl. GST)</span>
+  </div>
+  <span class="plan-timeline">{timeline}</span>
+  <div class="plan-tags">
+    <span class="plan-subtitle">IDEAL FOR</span>
+    {bestTags.map((tag) => <span class="plan-tag">{tag}</span>)}
+  </div>
+  <ul class="plan-include-list">
+    <span class="plan-subtitle">INCLUDES</span>
+    {includeList.map((item) => <li class="plan-include-item">{item}</li>)}
+  </ul>
+  <div class="plan-button">
+    <SecondaryButton text="Contact Now" linkUrl="document.getElementById('contact').scrollIntoView()"/>
+  </div>
+</div>
+
+<style>
+  .plan-card {
+    background-color: var(--white1);
+    border-radius: 16px;
+    padding: 32px 24px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 32px;
+  }
+  .plan-topline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    width: 100%;
+  }
+  .plan-header {
+    font-size: var(--d3);
+    line-height: 32px;
+    color: var(--primary);
+    font-weight: 600;
+  }
+  .plan-popular {
+    background-color: var(--primary);
+    border-radius: 16px;
+    padding: 8px 16px;
+    font-size: var(--d5);
+    line-height: 16px;
+    color: var(--white0);
+    font-weight: 600;
+  }
+  .plan-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0px;
+  }
+  .plan-slashed-price {
+    font-size: var(--d4);
+    line-height: 32px;
+    font-weight: 400;
+    color: var(--grey1);
+    text-decoration: line-through;
+  }
+  .plan-current-price {
+    font-size: var(--d2);
+    line-height: 48px;
+    color: var(--black0);
+    font-weight: 600;
+  }
+  .plan-gst{
+    font-size: var(--d5);
+    line-height: 21px;
+    font-weight: 400;
+    color: var(--black0);
+  }
+  .plan-timeline {
+    font-size: var(--d4);
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--black0);
+  }
+  .plan-tags {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 8px;
+  }
+  .plan-subtitle {
+    font-size: var(--d5);
+    line-height: 21px;
+    font-weight: 600;
+    color: var(--grey1);
+  }
+  .plan-tag {
+    background-color: var(--white2);
+    border-radius: 16px;
+    padding: 8px 16px;
+    font-size: var(--d5);
+    line-height: 21px;
+    font-weight: 400;
+    color: var(--black0);
+  }
+  .plan-include-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 12px;
+  }
+  .plan-include-item {
+    list-style-type: disc;
+    list-style-position: inside;
+    font-size: var(--d5);
+    line-height: 21px;
+    font-weight: 400;
+    color: var(--black0);
+  }
+  .plan-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    .plan-card {
+      padding: 24px;
+      gap:24px;
+    }
+    .plan-header {
+      font-size: var(--m3);
+      line-height: 30px;
+    }
+    .plan-popular {
+      font-size: var(--m5);
+      line-height: 18px;
+      padding: 6px 12px;
+    }
+    .plan-slashed-price {
+      font-size: var(--m3);
+      line-height: 30px;
+    }
+    .plan-current-price {
+      font-size: var(--m2);
+      line-height: 40px;
+    }
+    .plan-gst {
+      font-size: var(--m5);
+      line-height: 21px;
+    }
+    .plan-timeline {
+      font-size: var(--m4);
+      line-height: 24px;
+    }
+    .plan-subtitle {
+      font-size: var(--m5);
+      line-height: 21px;
+    }
+    .plan-tag {
+      font-size: var(--m5);
+      line-height: 21px;
+      padding: 6px 12px;
+    }
+    .plan-include-item {
+      font-size: var(--m5);
+      line-height: 21px;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .plan-card {
+      background-color: var(--black1);
+    }
+    .plan-slashed-price {
+      color: var(--grey0);
+    }
+    .plan-current-price {
+      color: var(--white0);
+    }
+    .plan-gst {
+      color: var(--white1);
+    }
+    .plan-timeline {
+      color: var(--white1);
+    }
+    .plan-subtitle {
+      color: var(--grey0);
+    }
+    .plan-include-item {
+      color: var(--white1);
+    }
+    .plan-tag {
+      background-color: var(--black2);
+      color: var(--white0);
+    }
+  }
+</style>

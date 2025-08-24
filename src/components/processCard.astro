@@ -1,0 +1,145 @@
+---
+interface Props {
+  title: string;
+  iconUrl: string;
+  subtitle: string;
+  outcomeText: string;
+  paymentTag: string;
+  step: number;
+}
+
+const { title, iconUrl, subtitle, outcomeText, paymentTag, step } = Astro.props;
+---
+
+<div class="process-card">
+  <div class="process-header">
+    <img src={iconUrl} class="process-icon" alt="Process Icon" />
+    <span class="process-title">{title}</span>
+  </div>
+  <span class="process-subtitle">{subtitle}</span>
+  <span class="process-outcome"
+    >OUTCOME <br /> <span class="process-subtitle">{outcomeText}</span></span
+  >
+  <span class="process-payment">{paymentTag}</span>
+  <div class="process-step">
+    <span class="process-step-number">{step}</span>
+  </div>
+</div>
+
+<style>
+  .process-card {
+    background-color: var(--white1);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-self: start;
+    gap: 24px;
+  }
+  .process-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 12px;
+  }
+  .process-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .process-title {
+    font-size: var(--d3);
+    line-height: 40px;
+    font-weight: 600;
+    color: var(--primary);
+  }
+  .process-subtitle {
+    font-size: var(--d4);
+    line-height: 28px;
+    font-weight: 400;
+    color: var(--grey1);
+    margin-bottom: auto;
+  }
+  .process-outcome {
+    font-size: var(--d5);
+    line-height: 21px;
+    font-weight: 600;
+    color: var(--black0);
+  }
+  .process-payment {
+    font-size: var(--d5);
+    line-height: 21px;
+    font-weight: 400;
+    color: var(--black0);
+    background-color: var(--white2);
+    padding: 8px 16px;
+    border-radius: 16px;
+  }
+  .process-step {
+    border: 8px solid var(--primary);
+    border-radius: 16px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .process-step-number {
+    font-size: var(--d2);
+    line-height: 48px;
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  @media screen and (max-width: 768px) {
+    .process-card {
+      padding: 24px;
+      gap: 24px;
+    }
+    .process-icon {
+      width: 32px;
+      height: 32px;
+    }
+    .process-title {
+      font-size: var(--m3);
+      line-height: 32px;
+    }
+    .process-subtitle {
+      font-size: var(--m4);
+      line-height: 24px;
+    }
+    .process-outcome {
+      font-size: var(--m5);
+      line-height: 21px;
+    }
+    .process-payment {
+      font-size: var(--m5);
+      line-height: 21px;
+      padding: 6px 12px;
+    }
+    .process-step {
+      width: 40px;
+      height: 40px;
+    }
+    .process-step-number {
+      font-size: var(--m2);
+      line-height: 40px;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .process-card {
+      background-color: var(--black1);
+    }
+    .process-subtitle {
+      color: var(--grey0);
+    }
+    .process-outcome {
+      color: var(--white2);
+    }
+    .process-payment {
+      background-color: var(--black2);
+      color: var(--white0);
+    }
+  }
+</style>

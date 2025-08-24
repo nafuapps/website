@@ -1,0 +1,123 @@
+---
+interface Props {
+  tags: string[];
+  header: string;
+  subtitle: string;
+  numberStars: number;
+}
+
+import starUrl from "../images/Star.png";
+
+const { header, subtitle, tags, numberStars } = Astro.props;
+---
+
+<div class="service-card">
+  <span class="service-header">{header}</span>
+  <span class="service-subtitle">{subtitle}</span>
+  <div class="service-tags">
+    {tags.map((tag) => <span class="service-tag">{tag}</span>)}
+  </div>
+  <div class="service-stars">
+    {
+      Array.from({ length: numberStars }, (_, i) => (
+        <img class="star" src={starUrl.src} alt="Star image" />
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .service-card {
+    background-color: var(--white1);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 32px;
+  }
+  .service-header {
+    font-size: var(--d3);
+    line-height: 32px;
+    color: var(--primary);
+    font-weight: 600;
+  }
+  .service-subtitle {
+    font-size: var(--d4);
+    line-height: 30px;
+    color: var(--grey1);
+    font-weight: 400;
+  }
+  .service-tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+    gap: 12px;
+  }
+  .service-tag {
+    background-color: var(--white2);
+    border-radius: 16px;
+    padding: 8px 16px;
+    font-size: var(--d5);
+    line-height: 21px;
+    font-weight: 400;
+    color: var(--black0);
+  }
+  .service-stars {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+  }
+  .star {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .service-card {
+      padding: 32px 24px;
+      gap: 24px;
+    }
+    .service-header {
+      font-size: var(--m3);
+      line-height: 24px;
+    }
+    .service-subtitle {
+      font-size: var(--m4);
+      line-height: 24px;
+    }
+    .service-tags {
+      gap: 8px;
+    }
+    .service-tag {
+      padding: 6px 12px;
+      font-size: var(--m5);
+      line-height: 18px;
+    }
+    .star {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .service-card {
+      background-color: var(--black1);
+    }
+    .service-header {
+      color: var(--primary);
+    }
+    .service-subtitle {
+      color: var(--grey0);
+    }
+    .service-tag {
+      background-color: var(--black2);
+      color: var(--white0);
+    }
+  }
+</style>

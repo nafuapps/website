@@ -1,0 +1,54 @@
+---
+interface Props {
+  header: string;
+  subtitle: string;
+}
+
+const { header, subtitle } = Astro.props;
+---
+
+<div class="trust-card">
+  <span class="trust-header">{header}</span>
+  <span class="trust-subtitle">{subtitle}</span>
+</div>
+
+<style>
+  .trust-card {
+    padding: 8px;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    flex:1;
+  }
+  .trust-header {
+    font-size: var(--d2);
+    line-height: 48px;
+    color: var(--primary);
+    font-weight: 600;
+    text-align: center;
+  }
+  .trust-subtitle {
+    font-size: var(--d4);
+    line-height: 30px;
+    color: var(--primary);
+    font-weight: 400;
+    text-align: center;
+  }
+
+   @media screen and (max-width: 768px) {
+    .trust-card {
+      padding: 4px;
+      gap: 8px;
+    }
+    .trust-header {
+      font-size: var(--m2);
+      line-height: 36px;
+    }
+    .trust-subtitle {
+      font-size: var(--m4);
+      line-height: 21px;
+    }
+</style>

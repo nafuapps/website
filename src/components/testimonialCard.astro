@@ -1,0 +1,92 @@
+---
+interface Props {
+  header: string;
+  subtitle1: string;
+  subtitle2: string;
+  avatarUrl?: string;
+}
+
+const { header, subtitle1, subtitle2, avatarUrl } = Astro.props;
+---
+
+<div class="testimonial-card">
+  <span class="testimonial-header">{header}</span>
+  <div class="testimonial-content">
+    <img src={avatarUrl} alt="Testimonial Avatar" class="testimonial-icon" />
+    <span class="testimonial-subtitle">{subtitle1}<br /><i>{subtitle2}</i></span
+    >
+  </div>
+</div>
+
+<style>
+  .testimonial-card {
+    background-color: var(--white1);
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 16px;
+  }
+  .testimonial-icon {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+  .testimonial-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+  }
+  .testimonial-header {
+    font-size: var(--d4);
+    line-height: 24px;
+    color: var(--grey1);
+    font-weight: 400;
+  }
+  .testimonial-subtitle {
+    font-size: var(--d5);
+    line-height: 21px;
+    font-weight: 600;
+    color: var(--secondary-dark);
+  }
+
+  @media screen and (max-width: 768px) {
+    .testimonial-card {
+      gap: 16px;
+      padding: 32px 24px;
+    }
+    .testimonial-icon {
+      width: 40px;
+      height: 40px;
+    }
+    .testimonial-content {
+      gap: 16px;
+    }
+    .testimonial-header {
+      font-size: var(--m4);
+      line-height: 24px;
+    }
+    .testimonial-subtitle {
+      font-size: var(--m5);
+      line-height: 18px;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .testimonial-card {
+      background-color: var(--black1);
+    }
+    .testimonial-header {
+      color: var(--grey0);
+    }
+    .testimonial-subtitle {
+      color: var(--secondary);
+    }
+  }
+</style>

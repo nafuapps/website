@@ -1,0 +1,49 @@
+---
+interface Props {
+  text: string;
+  linkUrl: string;
+}
+
+const { text, linkUrl } = Astro.props;
+---
+
+<div class="secondary-button" onclick={linkUrl}>
+  {text}
+</div>
+
+<style>
+  .secondary-button {
+    color: var(--primary);
+    display: inline-flex;
+    border: 1px solid var(--primary);
+    padding: 12px 32px;
+    border-radius: 16px;
+    font-size: var(--d4);
+    line-height: 38px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .secondary-button:hover {
+    background-color: var(--white0);
+  }
+
+  @media screen and (max-width: 768px) {
+    .secondary-button {
+      padding: 8px 16px;
+      font-size: var(--m4);
+      line-height: 30px;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .secondary-button:hover {
+      background-color: var(--black2);
+    }
+  }
+</style>

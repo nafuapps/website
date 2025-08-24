@@ -1,0 +1,77 @@
+---
+interface Props {
+  text: string;
+  iconUrl: string;
+  linkUrl: string;
+}
+
+const { text, iconUrl, linkUrl } = Astro.props;
+---
+
+<a class="action-button" href={linkUrl}>
+  <span class="action-button-text">{text}</span>
+  <div class="action-button-icon">
+    <img src={iconUrl} alt="Action Icon" class="action-button-img" />
+  </div>
+</a>
+
+<style>
+  .action-button {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    border: 1px solid var(--primary);
+    padding: 7px 8px 7px 32px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    gap: 16px;
+    text-decoration: none;
+    text-align: center;
+  }
+  .action-button:hover {
+    background-color: var(--white0);
+  }
+  .action-button-text {
+    color: var(--primary);
+    font-size: var(--d4);
+    line-height: 40px;
+    font-weight: 400;
+  }
+  .action-button-icon {
+    height: 48px;
+    width: 48px;
+    border-radius: 12px;
+    display: flex;
+    background-color: var(--primary);
+    justify-content: center;
+    align-items: center;
+  }
+  .action-button-img {
+    height: 24px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .action-button {
+      padding: 5px 5px 5px 20px;
+      gap: 8px;
+    }
+    .action-button-text {
+      font-size: var(--m4);
+      line-height: 32px;
+    }
+    .action-button-icon {
+      height: 36px;
+      width: 36px;
+    }
+    .action-button-img {
+      height: 16px;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    .action-button:hover {
+      background-color: var(--black2);
+    }
+  }
+</style>

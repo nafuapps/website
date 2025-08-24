@@ -1,0 +1,41 @@
+---
+interface Props {
+  text: string;
+  linkUrl: string;
+}
+
+const { text, linkUrl } = Astro.props;
+---
+
+<div class="primary-button" onclick={linkUrl}>
+  {text}
+</div>
+
+<style>
+  .primary-button {
+    background-color: var(--primary);
+    color: white;
+    display: inline-flex;
+    border-radius: 16px;
+    padding: 12px 32px;
+    font-size: var(--d4);
+    line-height: 40px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .primary-button:hover {
+    background-color: var(--primary-dark);
+  }
+
+  @media screen and (max-width: 768px) {
+    .primary-button {
+      padding: 8px 20px;
+      font-size: var(--m4);
+      line-height: 32px;
+    }
+  }
+</style>
