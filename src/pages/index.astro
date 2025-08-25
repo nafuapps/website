@@ -26,6 +26,10 @@ import connectIcon from "../images/ConnectIcon.png";
 import commitIcon from "../images/CommitIcon.png";
 import createIcon from "../images/CreateIcon.png";
 import closeIcon from "../images/CloseIcon.png";
+import websiteIcon from "../images/WebsiteIcon.png";
+import appIcon from "../images/AppIcon.png";
+import uiuxIcon from "../images/UiUxIcon.png";
+import productIcon from "../images/ProductIcon.png";
 import pmBG from "../images/PM_BG.png";
 import fwBG from "../images/FW_BG.png";
 import etBG from "../images/ET_BG.png";
@@ -34,6 +38,7 @@ import cmBG from "../images/CM_BG.png";
 import person1 from "../images/person1.jpeg";
 import person2 from "../images/person2.jpeg";
 import person3 from "../images/person3.jpeg";
+import landingFrame from "../images/LandingFrame.png";
 ---
 
 <html lang="en">
@@ -42,7 +47,15 @@ import person3 from "../images/person3.jpeg";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>NaFu Apps</title>
+    <meta
+      name="description"
+      content="Launch your business on its digital journey with NaFu apps in Agra, UP, India - Mobile App, Website, UI/UX, Product Consulting"
+    />
+    <meta
+      name="keywords"
+      content="Mobile App, Website, UI/UX, Product Consulting, E-Commerce, B2B SaaS, Graphic Design, Logo, Branding, Agra, UP, Uttar Pradesh, India "
+    />
+    <title>NaFu Apps - Website & App Development Agency</title>
   </head>
   <body>
     <div class="main-content" id="main">
@@ -96,10 +109,12 @@ import person3 from "../images/person3.jpeg";
             <span class="hero-text">but don't know where to start?</span>
             <span class="hero-text" id="text-pop">We will help you.</span>
           </div>
+          <img id="landingImg" src={landingFrame.src} alt="Landing Image" />
+          <!-- <div class="landing-break"></div> -->
           <div class="landing-title">
             <span class="hero-subtext"
-              >NaFu Apps is a freelance web agency which launches your business
-              onto its digital journey</span
+              >NaFu Apps is a freelance web development agency which launches
+              your business onto its digital journey</span
             >
             <span class="hero-subtext" id="subtext-pop">blazingly fast...</span>
           </div>
@@ -191,24 +206,28 @@ import person3 from "../images/person3.jpeg";
           </span>
           <div class="services-content">
             <ServiceCard
+              iconUrl={websiteIcon.src}
               header="WEBSITE DEVELOPMENT"
               subtitle="Create amazing professional websites to quickly showcase your business online"
               tags={["Portfolio", "Online Shop", "Blog"]}
               numberStars={4}
             />
             <ServiceCard
+              iconUrl={appIcon.src}
               header="MOBILE & WEB APP DEVELOPMENT"
               subtitle="Build scalable mobile and web applications to interact with your customers"
               tags={["Startup MVP Apps", "B2B SaaS", "E-Commerce"]}
               numberStars={5}
             />
             <ServiceCard
+              iconUrl={uiuxIcon.src}
               header="UI/UX DESIGN & BRANDING"
-              subtitle="Enhance user experience with visually appealing digital touchpoints for your brand"
+              subtitle="Enhance user experience with visually appealing digital assets for your brand"
               tags={["Graphic Design", "Design System", "Branding", "Logo"]}
               numberStars={4}
             />
             <ServiceCard
+              iconUrl={productIcon.src}
               header="PRODUCT CONSULTING"
               subtitle="Accelerate execution of your product roadmap to achieve user-centric results"
               tags={["Product Management", "Strategy", "Consulting"]}
@@ -219,8 +238,8 @@ import person3 from "../images/person3.jpeg";
         <div class="section" id="pricing">
           <span class="section-header">OUR PRICING</span>
           <span class="section-title"
-            >We offer <span id="pricing-pop">affordable packages</span> to match
-            all your business needs... big or small.</span
+            >We offer <span id="pricing-pop">affordable service packages</span> to
+            match all your business needs... big or small.</span
           >
           <div class="pricing-plans">
             <PlanCard
@@ -245,8 +264,8 @@ import person3 from "../images/person3.jpeg";
               price="49,999/-"
               timeline="For a medium 1 - 2 month project"
               bestTags={[
-                "MVP mobile/web app for a startup",
-                "End-to-end branding",
+                "Simple mobile/web app",
+                "Full scale branding",
                 "Managing feature development",
               ]}
               includeList={[
@@ -259,11 +278,11 @@ import person3 from "../images/person3.jpeg";
               header="PREMIUM"
               slashedPrice="4,99,999"
               price="1,49,999/-"
-              timeline="For a large 4 - 6 month project"
+              timeline="For a big 4 - 6 month project"
               bestTags={[
-                "Full blown mobile/web app for an org",
+                "Large scale mobile/web app",
                 "B2B SaaS application",
-                "Managing entire product development",
+                "Managing entire product cycle",
               ]}
               includeList={[
                 "6 month post handover support",
@@ -281,7 +300,7 @@ import person3 from "../images/person3.jpeg";
             </li>
             <li class="pricing-footer-text">
               Post launch support does not include extra feature development or
-              requirement changes. It includes only review, bug fixes and
+              requirement changes. It includes only code review, bug fixes and
               testing of existing project deliverables.
             </li>
             <li class="pricing-footer-text">
@@ -302,14 +321,14 @@ import person3 from "../images/person3.jpeg";
         <div class="section" id="process">
           <span class="section-header">OUR PROCESS</span>
           <span class="section-title"
-            >We follow a <span id="process-pop">simple system</span> that works great
-            for both the parties involved - you and us.</span
+            >We follow a <span id="process-pop">simple transaction system</span>
+            that works great for both the parties involved - you and us.</span
           >
           <div class="process-content">
             <ProcessCard
               title="Connect"
               iconUrl={connectIcon.src}
-              subtitle="Initial discovery call to gather requirements and discuss goals, budget and timelines"
+              subtitle="Initial discovery call to gather requirements and discuss project goals, budget and timelines"
               outcomeText=" Draft proposal & rough estimate"
               paymentTag="Free of charge"
               step={1}
@@ -317,7 +336,7 @@ import person3 from "../images/person3.jpeg";
             <ProcessCard
               title="Commit"
               iconUrl={commitIcon.src}
-              subtitle="Detailed discussion to freeze deliverables and signing of contract to start the work"
+              subtitle="Detailed discussion to freeze project deliverables and signing of contract to start the work"
               outcomeText="Legal agreement & project kick-off"
               paymentTag="10% advance payment"
               step={2}
@@ -326,8 +345,8 @@ import person3 from "../images/person3.jpeg";
               title="Create"
               iconUrl={createIcon.src}
               subtitle="Build consistently, iterate quickly and frequently communicate with the client to review progress"
-              outcomeText="Regular project status updates and feedback"
-              paymentTag="40% milestone payment"
+              outcomeText="Regular status updates & feedback"
+              paymentTag="40% mid-way payment"
               step={3}
             />
             <ProcessCard
@@ -431,8 +450,8 @@ import person3 from "../images/person3.jpeg";
     --white1: #eeeeee;
     --white2: #dddddd;
     --black0: #000000;
-    --black1: #090909;
-    --black2: #1f1e1e;
+    --black1: #111111;
+    --black2: #222222;
     --grey0: #999999;
     --grey1: #666666;
     --primary: #ba5230;
@@ -446,8 +465,8 @@ import person3 from "../images/person3.jpeg";
     --d3: 24px;
     --d4: 18px;
     --d5: 14px;
-    --m1: 32px;
-    --m2: 26px;
+    --m1: 28px;
+    --m2: 24px;
     --m3: 20px;
     --m4: 16px;
     --m5: 14px;
@@ -554,9 +573,9 @@ import person3 from "../images/person3.jpeg";
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    gap: 64px;
+    gap: 32px;
     box-sizing: border-box;
-    padding: 64px 0px;
+    padding: 32px 0px;
     width: 100%;
   }
   .landing-title {
@@ -565,6 +584,10 @@ import person3 from "../images/person3.jpeg";
     align-items: center;
     justify-content: start;
     padding: 0px 48px;
+    z-index: 3;
+  }
+  #landingImg {
+    height: 200px;
   }
   .hero-text {
     font-size: var(--d1);
@@ -580,13 +603,16 @@ import person3 from "../images/person3.jpeg";
   #process-pop,
   #works-pop {
     color: var(--secondary-dark);
+    text-decoration: underline 6px var(--secondary);
+    text-underline-offset: 10px;
   }
   .hero-subtext {
-    font-size: var(--d3);
-    line-height: 32px;
+    font-size: var(--d4);
+    line-height: 28px;
     font-weight: 400;
-    color: var(--black0);
+    color: var(--grey1);
     text-align: center;
+    width: 75%;
   }
   #contact-pop,
   #subtext-pop {
@@ -599,6 +625,7 @@ import person3 from "../images/person3.jpeg";
     align-items: center;
     justify-content: center;
     gap: 24px;
+    z-index: 3;
   }
   .landing-strip {
     padding: 16px 32px;
@@ -610,6 +637,7 @@ import person3 from "../images/person3.jpeg";
     justify-content: center;
     background-color: var(--white0);
     width: 100%;
+    z-index: 3;
   }
   .strip-star {
     height: 32px;
@@ -642,6 +670,7 @@ import person3 from "../images/person3.jpeg";
     font-weight: 600;
     color: var(--black0);
     text-align: center;
+    width: 95%;
   }
   .about-content {
     display: flex;
@@ -703,13 +732,11 @@ import person3 from "../images/person3.jpeg";
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
-    width: 100%;
   }
   .works-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    width: 100%;
   }
   .works-content :last-child {
     display: none;
@@ -749,10 +776,10 @@ import person3 from "../images/person3.jpeg";
     width: 48px;
   }
 
-  @media screen and (min-width: 1600px) {
+  @media screen and (min-width: 1556px) {
     .main-header {
       margin: auto;
-      max-width: 1440px;
+      max-width: 1396px;
     }
     .main-sections {
       margin: 120px auto 0px auto;
@@ -769,7 +796,7 @@ import person3 from "../images/person3.jpeg";
     .contact-cta,
     .contact-social,
     .contact-footer {
-      max-width: 1440px;
+      max-width: 1396px;
     }
   }
 
@@ -831,18 +858,32 @@ import person3 from "../images/person3.jpeg";
       margin: 0px 24px;
     }
     #landing {
-      padding: 32px 0px;
+      padding: 16px 0px;
+      gap: 32px;
+    }
+    #landingImg {
+      height: 160px;
     }
     .landing-title {
       padding: 0px 24px;
     }
     .hero-text {
       font-size: var(--m1);
-      line-height: 40px;
+      line-height: 36px;
+    }
+    #text-pop,
+    #about-pop,
+    #services-pop,
+    #pricing-pop,
+    #process-pop,
+    #works-pop {
+      text-decoration: underline 4px var(--secondary);
+      text-underline-offset: 8px;
     }
     .hero-subtext {
-      font-size: var(--m3);
-      line-height: 30px;
+      font-size: var(--m4);
+      line-height: 24px;
+      width: 95%;
     }
     .landing-cta {
       gap: 16px;
@@ -869,7 +910,7 @@ import person3 from "../images/person3.jpeg";
     }
     .section-title {
       font-size: var(--m2);
-      line-height: 32px;
+      line-height: 36px;
     }
     .about-content {
       padding: 0px;
@@ -944,6 +985,9 @@ import person3 from "../images/person3.jpeg";
     .hero-subtext,
     .section-title {
       color: var(--white0);
+    }
+    .hero-subtext {
+      color: var(--grey0);
     }
     .pricing-footer-text {
       color: var(--grey0);

@@ -42,7 +42,7 @@ const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag
   .plan-card {
     background-color: var(--white1);
     border-radius: 16px;
-    padding: 32px 24px ;
+    padding: 32px ;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -55,6 +55,7 @@ const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag
     justify-content: space-between;
     align-items: start;
     width: 100%;
+    gap:16px;
   }
   .plan-header {
     font-size: var(--d3);
@@ -138,8 +139,8 @@ const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag
   .plan-include-item {
     list-style-type: disc;
     list-style-position: inside;
-    font-size: var(--d5);
-    line-height: 21px;
+    font-size: var(--d4);
+    line-height: 24px;
     font-weight: 400;
     color: var(--black0);
   }
@@ -157,6 +158,9 @@ const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag
       padding: 24px;
       gap:24px;
     }
+    .plan-topline{
+      gap:8px;
+    }
     .plan-header {
       font-size: var(--m3);
       line-height: 30px;
@@ -167,12 +171,12 @@ const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag
       padding: 6px 12px;
     }
     .plan-slashed-price {
-      font-size: var(--m3);
-      line-height: 30px;
+      font-size: var(--m4);
+      line-height: 24px;
     }
     .plan-current-price {
       font-size: var(--m2);
-      line-height: 40px;
+      line-height: 36px;
     }
     .plan-gst {
       font-size: var(--m5);
@@ -192,8 +196,8 @@ const { header, slashedPrice, price, timeline, bestTags, includeList, popularTag
       padding: 6px 12px;
     }
     .plan-include-item {
-      font-size: var(--m5);
-      line-height: 21px;
+      font-size: var(--m4);
+      line-height: 24px;
     }
   }
   @media (prefers-color-scheme: dark) {

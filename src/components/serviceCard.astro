@@ -1,6 +1,7 @@
 ---
 interface Props {
   tags: string[];
+  iconUrl: string;
   header: string;
   subtitle: string;
   numberStars: number;
@@ -8,10 +9,11 @@ interface Props {
 
 import starUrl from "../images/Star.png";
 
-const { header, subtitle, tags, numberStars } = Astro.props;
+const { iconUrl, header, subtitle, tags, numberStars } = Astro.props;
 ---
 
 <div class="service-card">
+  <img src={iconUrl} class="service-icon-img" alt="Service Icon" />
   <span class="service-header">{header}</span>
   <span class="service-subtitle">{subtitle}</span>
   <div class="service-tags">
@@ -36,6 +38,10 @@ const { header, subtitle, tags, numberStars } = Astro.props;
     justify-content: start;
     align-items: start;
     gap: 32px;
+  }
+  .service-icon-img {
+    height: 40px;
+    width: 40px;
   }
   .service-header {
     font-size: var(--d3);
@@ -72,6 +78,7 @@ const { header, subtitle, tags, numberStars } = Astro.props;
     align-items: center;
     justify-content: start;
     gap: 8px;
+    margin-top: auto;
   }
   .star {
     width: 24px;
@@ -82,6 +89,10 @@ const { header, subtitle, tags, numberStars } = Astro.props;
     .service-card {
       padding: 32px 24px;
       gap: 24px;
+    }
+    .service-icon-img {
+      height: 32px;
+      width: 32px;
     }
     .service-header {
       font-size: var(--m3);
